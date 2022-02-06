@@ -1,0 +1,196 @@
+\documentclass{article}
+
+\usepackage[english,russian]{babel}
+
+\title{Code Style}
+\author{author: Daniyar N. Zhetygeldenov, IA-032;\\ email: reedix@bk.ru}
+
+\begin{document}
+
+\maketitle
+
+\section{Вступление}
+Данный отчет содержит рекомендации написания кода, то есть "Code Style". 
+Целью этих правил является приятная читаемость кода. 
+\section{C++}
+Currently, the C++14 version is used \cite{CPP}.
+\subsection{Пример программы}
+
+\begin{tabular}{|p {400}|}
+\hline
+\\
+\begin{verbatim}
+#include <iostream>
+ 
+using namespace std;
+
+void printArr(int *arr, int size);
+
+int main() 
+{
+    setlocale(LC_ALL, "rus");
+ 
+    int arr[10]; // объявили массив на 10 ячеек
+ 
+    cout << "Введите 10 чисел для заполнения массива: " << endl;
+ 
+    for (int i = 0; i < 10; i++) 
+    {
+        cin >> arr[i]; // "читаем" элементы в массив
+    }
+ 
+    for (int i = 0; i < 10; i++) 
+    {
+        for (int j = 0; j < 9; j++) 
+        {
+            if (arr[j] > arr[j + 1]) 
+            {
+                int b = arr[j]; // создали дополнительную переменную
+                arr[j] = arr[j + 1]; // меняем местами
+                arr[j + 1] = b; // значения элементов
+            }
+        }
+    }
+ 
+    
+    printArr(arr, 10);
+
+    return 0;
+}
+
+void printArr(int *arr, int size)
+{
+    cout << "Массив в отсортированном виде: ";
+    for (int i = 0; i < 10; i++) 
+    {
+        cout << arr[i] << " "; // выводим элементы массива
+    }
+}
+\end{verbatim}
+\\
+\hline      
+\end{tabular}
+
+\subsection{Имена функций}
+Имена функций обязательно должны показывать смысл, предназначение или действие которое выполняет эта функция.\\
+\begin{tabular}{|c|c}
+\hline
+    \\
+    void printArr(int *arr, int size)\\
+    \\
+\hline      
+\end{tabular}
+
+\subsection{Переменным-итераторам следует давать имена i, j, k и т. д.}
+
+\begin{tabular}{|c|c}
+\hline
+    \\
+    for (int i = 0; i < 10); i++)\\
+    \\
+\hline      
+\end{tabular}
+
+\subsection{Фигурные скобки}
+Фигурные скобки должны стоять в новой строке и являться единственным символом в строке.\\
+\begin{tabular}{|p {320}|}
+\hline
+\\
+    \begin{verbatim}
+
+    for (int i = 0; i < 10; i++) 
+    {
+        cout << arr[i] << " "; // выводим элементы массива
+    }
+            
+    \end{verbatim}
+\\
+\hline      
+\end{tabular}
+
+\subsection{Вывод на экран}
+Вывод на экран производится через "cout".
+Его содержимое должно быть понятно пользователю.\\
+\\
+\begin{tabular}{|p {320}|}
+\hline
+\begin{verbatim}
+
+cout << arr[i] << " "; // выводим элементы массива
+
+\end{verbatim}
+\\
+\hline      
+\end{tabular}
+\\
+\\
+\\
+\\
+\subsection{Пробелы}
+Пробелы ставятся между операторами и операндами.\\
+\\
+\begin{tabular}{|p {320}|}
+\hline
+\begin{verbatim}
+
+for (int i = 0; i < 10; i++)
+
+\end{verbatim}
+\\
+\hline      
+\end{tabular}
+
+\subsection{Return}
+"Return" ставится в конце функции main и возвращает "0".\\
+\\
+\begin{tabular}{|p {320}|}
+\hline
+\begin{verbatim}
+
+return 0;
+
+\end{verbatim}
+\\
+\hline      
+\end{tabular}
+\\
+\\
+В случае ошибки программа завершается с кодом 1, за исключением использования флагов и т.д..\\
+\\
+\begin{tabular}{|p {320}|}
+\hline
+\begin{verbatim}
+
+return 1;
+
+\end{verbatim}
+\\
+\hline      
+\end{tabular}
+
+\subsection{Имена переменных}
+Имена переменных должны иметь смысл понятный для других людей, но не должны быть громоздкими.
+Краткое и информативное название - то, что нужно для имени переменной. \\
+\\
+\begin{tabular}{|p {320}|}
+\hline
+\begin{verbatim}
+
+int value;
+char name;
+int index;
+int distanceAB;
+int distanceCD;
+
+\end{verbatim}
+\\
+\hline      
+\end{tabular}
+\section{Вывод}
+В ходе данной лабораторной работы я научился создавать и редактировать текстовый файл через cистему компьютерной вёрстки LATEX.  
+\begin{thebibliography}{1}
+\bibitem{CPP}
+ISO/IEC 14882 Programming languages - C++.\\
+\end{thebibliography}
+
+\end{document}
